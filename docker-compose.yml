@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: rember
+      POSTGRES_PASSWORD: rember
+      POSTGRES_DB: rember
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
